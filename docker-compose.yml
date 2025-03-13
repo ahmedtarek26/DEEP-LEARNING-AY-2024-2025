@@ -1,0 +1,15 @@
+version: '3'
+services:
+  dl_container:
+    image: dl_container
+    container_name: dl_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    volumes:
+      - dl_volume:/workspace
+    ports:
+      - "8888:8888"  # For Jupyter Notebook
+volumes:
+  dl_volume:
